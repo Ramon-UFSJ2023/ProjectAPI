@@ -21,7 +21,7 @@ public class ServiceApplication {
     }
 
     public List<User> getAllUsers() {
-        return users;
+        return this.users;
     }
 
     public Optional<User> getUserByID(int id){
@@ -35,7 +35,8 @@ public class ServiceApplication {
     public Optional<User> updateUserById(int id, User userNew){
         return getUserByID(id).map(user -> {
             user.setName(userNew.getName());
-        return user;
+            return user;
         });
+        
     }
 }
